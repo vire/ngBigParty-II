@@ -1,0 +1,12 @@
+{
+  "name": "angular1-scaffold",
+  "dependencies": {},
+  "devDependencies": {},
+  "ambientDependencies": {
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#1c4a34873c9e70cce86edd0e61c559e43dfa5f75",
+    "angular-animate": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-animate.d.ts#3c26c6546fab58b39d04d6ae40bacfa9a25dd196",
+    "angular-material": "github:DefinitelyTyped/DefinitelyTyped/angular-material/angular-material.d.ts#a9680ac2efd3add0d38cd0331f30ad497d9dd1e0",
+    "angular-sanitize": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-sanitize.d.ts#4de74cb527395c13ba20b438c3a7a419ad931f1c",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#470954c4f427e0805a2d633636a7c6aa7170def8"
+  }
+}

@@ -1,0 +1,246 @@
+<md-toolbar ng-cloak md-whiteframe="4" layout="row" layout-align-xs="space-between center" layout-align="center center">
+  <md-button class="menu" ng-click="$ctrl.toggleSidenav()" aria-label="Show menu">
+    <md-icon>menu</md-icon>
+  </md-button>
+  <h1>ngBigParty II.</h1>
+
+  <md-fab-speed-dial
+    md-direction="down"
+    class="md-fling md-fab-top-right"
+  >
+    <md-fab-trigger>
+      <md-button aria-label="share this event" class="md-fab md-warn">
+        <md-icon>share</md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <md-button href="http://twitter.com/share?text=ahoj honvo" aria-label="Twitter" class="md-fab md-raised md-mini">
+        <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
+      </md-button>
+      <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+        <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
+      </md-button>
+      <md-button aria-label="G+" class="md-fab md-raised md-mini">
+        <md-icon md-svg-src="google_plus" aria-label="G+"></md-icon>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+</md-toolbar>
+
+<div flex layout="row">
+
+  <md-sidenav md-whiteframe="3" md-component-id="left">
+
+    <md-toolbar layout="row" layout-align="center center">
+      <img ng-src="{{ ::$ctrl.data.ngParty.logo.tiny }}" alt="ngParty logo">
+      <b>ngBigParty II.</b>
+    </md-toolbar>
+    <md-list>
+      <md-list-item
+        ng-repeat="(sectionKey,section) in ::$ctrl.data.sections"
+        ng-click="$ctrl.toggleSidenav(section.id)"
+      >
+        {{ ::section.title }}
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+  <md-content layout="column">
+
+    <section class="hero" id="home">
+      <div class="hero__bg-container">
+        <div class="hero__bg-container-overlay">
+          <img
+            class="img-responsive center-block"
+            ng-src="{{ ::$ctrl.data.ngParty.logo.large }}"
+            alt="ngParty logo"
+          >
+          <h2>{{ ::$ctrl.data.main.subtitle }}</h2>
+          <p class="md-title">{{ ::$ctrl.data.main.date }}</p>
+          <p>{{ ::$ctrl.data.main.quickAbout }}</p>
+          <md-button class="md-primary md-raised md-accent hero-btn">
+            <md-icon>event_seat</md-icon> {{ ::$ctrl.data.main.getTicketBtn }}
+          </md-button>
+        </div>
+      </div>
+
+    </section>
+
+    <section
+      id="{{ ::$ctrl.data.sections.whatToExpect.id }}"
+      class="section"
+    >
+      <h3 class="md-display-1">{{ ::$ctrl.data.sections.whatToExpect.title }}</h3>
+      <p
+        ng-repeat="content in ::$ctrl.data.sections.whatToExpect.content"
+      >
+        {{::content}}
+      </p>
+    </section>
+
+    <section
+      id="{{ ::$ctrl.data.sections.speakers.id }}"
+      class="section section--grey"
+    >
+      <h3 class="md-display-1">{{ ::$ctrl.data.sections.speakers.title }}</h3>
+      <div layout="row" layout-wrap="" layout-align-gt-sm="center">
+
+        <md-card
+          ng-repeat="speaker in ::$ctrl.data.sections.speakers.content | limitTo:10:1"
+          flex="100" flex-gt-sm="45" flex-gt-md="30"
+        >
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{ ::speaker.name }}</span>
+              <span class="md-subhead">{{ ::speaker.job }}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-md card-media"
+                   style="overflow: hidden"
+              >
+                <img
+                  class="img-responsive"
+                  ng-src="{{ ::speaker.picture }}" alt="{{ ::speaker.name }}">
+              </div>
+            </md-card-title-media>
+          </md-card-title>
+
+          <md-card-content>
+            <p ng-repeat="paragraph in ::speaker.bio">
+              {{ ::paragraph }}
+            </p>
+          </md-card-content>
+          <md-divider></md-divider>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-href="{{ ::speaker.contact.twitter }}">twitter</md-button>
+            <md-button ng-href="{{ ::speaker.contact.github }}">github</md-button>
+          </md-card-actions>
+        </md-card>
+
+      </div>
+    </section>
+
+    <section
+      id="{{ ::$ctrl.data.sections.program.id }}"
+      class="section"
+    >
+      <h3 class="md-display-1">{{ ::$ctrl.data.sections.program.title }}</h3>
+      <div>
+        <md-list layout="row" layout-wrap="" layout-align="center top">
+
+          <md-list-item
+            flex-gt-md="45"
+            layout-padding=""
+            class="md-3-line md-long-text talk"
+            ng-repeat="speaker in ::$ctrl.data.sections.speakers.content | orderBy:'talk.order'"
+          >
+            <img
+              ng-src="{{ ::speaker.picture }}" alt="{{ ::speaker.name }}"
+              class="md-avatar"
+            >
+            <div class="md-list-item-text" style="margin-top: 0">
+
+              <div class="talk__header">
+                <h3 class="talk__title">{{ ::speaker.talk.title }}</h3>
+                <h4 layout="row" layout-align="space-between">
+                  {{ ::speaker.name }}
+                  <time>
+                    <md-icon>schedule</md-icon>
+                    {{ ::speaker.talk.time }}
+                  </time>
+                </h4>
+              </div>
+              <div class="talk__content">
+                <md-icon>info_outline</md-icon>
+                <p ng-repeat="description in ::speaker.talk.description">
+                  {{ ::description }}
+                </p>
+              </div>
+            </div>
+          </md-list-item>
+        </md-list>
+      </div>
+    </section>
+
+    <section
+      id="{{ ::$ctrl.data.sections.venue.id }}"
+      class="section section--grey"
+    >
+      <h3 class="md-display-1">{{ ::$ctrl.data.sections.venue.title }} <md-icon>room</md-icon></h3>
+
+      <div layout="row" layout-align="center">
+
+        <iframe
+          flex flex-gt-sm="80"
+          ng-src="{{ ::$ctrl.data.sections.venue.map }}"
+          frameborder="0" style="border:0" height="400" allowfullscreen
+        ></iframe>
+
+      </div>
+
+    </section>
+
+    <section
+      id="{{ ::$ctrl.data.sections.sponsors.id }}"
+      class="section">
+      <h3 class="md-display-1">{{ ::$ctrl.data.sections.sponsors.title }}</h3>
+      <p ng-repeat="content in ::$ctrl.data.sections.sponsors.content">
+        {{ ::content }}
+      </p>
+      <div layout-xs="column" layout="row" layout-align="center center" class="sponsors">
+
+        <figure ng-repeat="sponsor in ::$ctrl.data.sections.sponsors.companies">
+          <a ng-href="{{ sponsor.web }}"><img ng-src="{{ ::sponsor.logo }}" alt="{{ ::sponsor.name }}"></a>
+          <!--<figcaption>{{ ::sponsor.name }}</figcaption>-->
+        </figure>
+
+      </div>
+      <div layout-xs="column" layout="row" layout-wrap=""  layout-align="center">
+        <p ng-repeat="footer in ::$ctrl.data.sections.sponsors.footer">
+          {{ ::footer }}
+        </p>
+        <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.meetup }}" class="md-accent" flex-xs="">get in touch</md-button>
+      </div>
+    </section>
+
+    <section
+      id="{{ ::$ctrl.data.sections.codeOfConduct.id }}"
+      class="section section--grey"
+    >
+      <h3 class="md-display-1">{{ ::$ctrl.data.sections.codeOfConduct.title }}</h3>
+      <p ng-repeat="content in ::$ctrl.data.sections.codeOfConduct.content">
+        {{ ::content }}
+      </p>
+      <p class="md-body-2">
+        tl;dr: Don’t be a Jerk
+      </p>
+    </section>
+
+    <footer class="section footer">
+
+      <ul class="social" layout="row" layout-align="center">
+        <li>
+          <md-button ng-href="{{ $ctrl.data.ngParty.links.social.github }}">github</md-button>
+        </li>
+        <li>
+          <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.meetup }}">meetup.com</md-button>
+        </li>
+        <li>
+          <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.twitter }}">twitter</md-button>
+        </li>
+        <li>
+          <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.slack }}">slack</md-button>
+        </li>
+        <li>
+          <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.google }}">g+</md-button>
+        </li>
+      </ul>
+
+      <small>&copy; ngPartyCz 2016</small>
+
+    </footer>
+  </md-content>
+
+
+</div>
