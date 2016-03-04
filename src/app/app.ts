@@ -6,7 +6,7 @@ import * as angular from 'angular';
 // import * as ngMessages from 'angular-messages';
 import * as ngSanitize from 'angular-sanitize';
 import * as ngMaterial from 'angular-material';
-// import '../assets/svg-assets.js';
+import '../assets/svg-assets.js';
 import { provide } from 'ng-metadata/core';
 
 
@@ -14,7 +14,7 @@ import { AppComponent } from './app.component.ts';
 import { Configure } from './app.config';
 
 const ngMaterialSvg = 'material.svgAssetsCache';
-const ngModule = angular.module( 'app', [
+export const AppModule = angular.module( 'app', [
     ngSanitize,
     // ngAria,
     ngMaterial,
@@ -22,5 +22,3 @@ const ngModule = angular.module( 'app', [
   ] )
   .config( Configure )
   .directive( ...provide( AppComponent ) );
-
-export const AppModule = ngModule;
