@@ -3,8 +3,6 @@ const webpack = require( 'webpack' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
-const ENV = ( process.env.NODE_ENV || 'development' );
-
 const webpackConfigEntryPoints = {
   app: './src/bootstrap.ts'
 };
@@ -52,27 +50,16 @@ const webpackConfigLoaders = [
 const webpackConfigPlugins = [
 
   new HtmlWebpackPlugin({
-    title: 'Tombaugh Regio',
-    template: 'src/index.ejs',
-    env: ENV,
-    host: '0.0.0.0',
-    port: process.env.npm_package_config_port,
-    googleAnalytics: {
-      trackingId: 'UA-XXXX-XX'
-    }
+    template: 'src/index.html',
+    host: '0.0.0.0'
   }),
 
   new CopyWebpackPlugin([
     {
       from: 'src/assets',
-      to: './'
+      to: './assets'
     }
   ])
-
-  // // Load lodash into global
-  // new webpack.ProvidePlugin( {
-  //   lodash: 'lodash'
-  // } )
 
 ];
 
@@ -82,7 +69,7 @@ module.exports = {
   entry: webpackConfigEntryPoints,
   output: {
     path: '/',
-    publicPath: '/',
+    publicPath: '/ngBigParty-II',
     filename: '[name].js'
   },
   resolve: {

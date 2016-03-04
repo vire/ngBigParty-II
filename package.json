@@ -1,10 +1,11 @@
 {
-  "name": "angular1-scaffold",
+  "name": "ngbigparty-ii",
   "version": "1.0.0",
   "description": "Angular 1 scaffold with Typescript and ng-metadata",
   "main": "app/app.js",
   "config": {
-    "port": "9000"
+    "port": "9000",
+    "title": "ngBigParty II"
   },
   "repository": {
     "type": "git",
@@ -13,8 +14,8 @@
   "scripts": {
     "typings": "typings install",
     "postinstall": "npm run typings",
-    "start": "webpack-dev-server --port $npm_package_config_port --hot --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
-    "build": "NODE_ENV=production webpack --config webpack-build.config.js"
+    "start": "webpack-dev-server --port 9000 --hot --inline --watch --content-base src/",
+    "build": "webpack --config webpack-build.config.js"
   },
   "keywords": [],
   "contributors": [

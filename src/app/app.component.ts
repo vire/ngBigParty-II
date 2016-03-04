@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     // Load all data
-    this.$http.get( '/assets/data.json' ).then( ( response )=>this.data = response.data );
+    this.$http.get( '/ngBigParty-II/assets/data.json' ).then( ( response )=>this.data = response.data );
 
   }
 
