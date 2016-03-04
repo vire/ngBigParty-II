@@ -6,7 +6,7 @@ import * as angular from 'angular';
 // import * as ngMessages from 'angular-messages';
 import * as ngSanitize from 'angular-sanitize';
 import * as ngMaterial from 'angular-material';
-import '../assets/svg-assets.js';
+// import '../assets/svg-assets.js';
 import { provide } from 'ng-metadata/core';
 
 
