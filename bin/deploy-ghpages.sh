@@ -7,5 +7,5 @@ npm run build
  git config user.email "travis@nodemeatspace.com"
  git add .
  git commit -m "Deploy doc to Github Pages"
- git push --force --quiet "https://3ed12f05fac1aec3edf41ec0df75d2f4565504e6:x-oauth-basic@github.com/ngParty/ngBigParty-II.git" master:gh-pages
+ git push --force --quiet "https://${GH_TOKEN}:x-oauth-basic@github.com/ngParty/ngBigParty-II.git" master:gh-pages
 )
