@@ -1,7 +1,6 @@
-# Angular1 TypeScript ng-metadata Scaffold
+# ngBigParty II Website
 
-Angular 1 Scaffold by ngParty team.
-
+[![Build Status](https://travis-ci.org/ngParty/ngBigParty-II.svg?branch=master)](https://travis-ci.org/ngParty/ngBigParty-II)
 
 ## Install
 
