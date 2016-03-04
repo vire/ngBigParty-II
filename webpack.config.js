@@ -53,7 +53,7 @@ const webpackConfigPlugins = [
 
   new HtmlWebpackPlugin({
     title: 'Tombaugh Regio',
-    template: 'src/index.html',
+    template: 'src/index.ejs',
     env: ENV,
     host: '0.0.0.0',
     port: process.env.npm_package_config_port,
