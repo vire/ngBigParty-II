@@ -3,19 +3,15 @@ export class Configure {
   static $inject = [
     '$sceDelegateProvider',
     '$mdIconProvider',
-    '$mdThemingProvider',
-    '$locationProvider'
+    '$mdThemingProvider'
   ];
 
   constructor(
     $sceDelegateProvider: ng.ISCEDelegateProvider,
     $mdIconProvider: ng.material.IIconProvider,
-    $mdThemingProvider: ng.material.IThemingProvider,
-    $locationProvider: ng.ILocationProvider
+    $mdThemingProvider: ng.material.IThemingProvider
   ) {
-
-    $locationProvider.html5Mode(true);
-
+    
     $sceDelegateProvider.resourceUrlWhitelist( [
       'self',
       'https://www.google.com/maps/**'
