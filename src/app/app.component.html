@@ -46,7 +46,7 @@
     </md-fab-speed-dial>
   </md-toolbar>
 
-  <md-content layout="column">
+  <md-content>
 
     <section class="hero" id="home">
       <div class="hero__bg-container">
@@ -59,8 +59,12 @@
           <h2>{{ ::$ctrl.data.main.subtitle }}</h2>
           <p class="md-title">{{ ::$ctrl.data.main.date }}</p>
           <p>{{ ::$ctrl.data.main.quickAbout }}</p>
-          <md-button class="md-primary md-raised md-accent hero-btn">
-            <md-icon>event_seat</md-icon> {{ ::$ctrl.data.main.getTicketBtn }}
+          <md-button
+            ng-href="{{ ::$ctrl.data.main.getTicketLink }}"
+            class="md-primary md-raised md-accent hero-btn"
+          >
+            <md-icon>event_seat</md-icon>
+            {{ ::$ctrl.data.main.getTicketBtn }}
           </md-button>
         </div>
       </div>
@@ -221,7 +225,7 @@
 
       <ul class="social" layout="row" layout-xs="column" layout-align="center">
         <li>
-          <md-button ng-href="{{ $ctrl.data.ngParty.links.social.github }}">github</md-button>
+          <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.github }}">github</md-button>
         </li>
         <li>
           <md-button ng-href="{{ ::$ctrl.data.ngParty.links.social.meetup }}">meetup.com</md-button>
