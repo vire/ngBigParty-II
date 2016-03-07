@@ -1,28 +1,16 @@
-html, body {
-  font-family: 'Roboto', sans-serif;
-  font-size:14px;
-  height:100%;
-  margin: 0px;
-  padding: 0px;
-}
-
 /* Toolbar area */
 
-.menu {
+/*.menu {
   background-color: transparent;
   border: none;
   height: 38px;
   margin: 16px;
   width: 36px;
-}
-
-md-toolbar h1 {
-  margin: auto;
-}
+}*/
 
 /* Sidenav area */
 
-md-list .md-button {
+/*md-list .md-button {
   color: inherit;
   font-weight: 500;
   text-align: left;
@@ -32,15 +20,13 @@ md-list .md-button.selected {
   color: #03a9f4;
 }
 
-md-sidenav  md-list {
-  padding: 0px 0px 8px 0px;
-}
+*/
 
 
 /* Primary content area */
-
+/*
 #content {
-  overflow: hidden;
+  overflow: auto;
 }
 
 #content  {
@@ -89,18 +75,15 @@ md-button.menuBtn > md-icon {
   max-width: 500px;
 }
 
-/* Utils */
+!* Utils *!
 
 .content-wrapper {
   position: relative;
 }
 
-/* Typography support coming in 0.8.0 */
+!* Typography support coming in 0.8.0 *!
 
-md-toolbar h1 {
-  font-size: 1.250em;
-  font-weight: 400;
-}
+
 
 .avatar {
   position: relative;
@@ -127,11 +110,39 @@ span.name {
   font-weight: bold;
   font-size:1.1em;
   padding-left:5px;
+}*/
+
+/*html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  height:100%;
+  margin: 0;
+  padding: 0;
+}*/
+
+html, body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 
-.ng-logo{
+app{
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+
 }
 
+md-toolbar h1 {
+  margin: auto;
+  font-size: 1.250em;
+  font-weight: 400;
+}
+
+md-sidenav  md-list {
+  padding: 0 0 8px 0;
+}
+
+.ng-logo{  }
 
 /*HERO*/
 .hero{
@@ -225,6 +236,12 @@ span.name {
 }
 .social{
   list-style: none;
+  padding: 0;
+
+  li > .md-button{
+    display: block;
+  }
+
 }
 
 .sponsors{}
