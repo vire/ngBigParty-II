@@ -1,12 +1,20 @@
 export class Configure {
 
-  static $inject = [ '$sceDelegateProvider', '$mdIconProvider', '$mdThemingProvider' ];
+  static $inject = [
+    '$sceDelegateProvider',
+    '$mdIconProvider',
+    '$mdThemingProvider',
+    '$locationProvider'
+  ];
 
   constructor(
     $sceDelegateProvider: ng.ISCEDelegateProvider,
     $mdIconProvider: ng.material.IIconProvider,
-    $mdThemingProvider: ng.material.IThemingProvider
+    $mdThemingProvider: ng.material.IThemingProvider,
+    $locationProvider: ng.ILocationProvider
   ) {
+
+    $locationProvider.html5Mode(true);
 
     $sceDelegateProvider.resourceUrlWhitelist( [
       'self',
