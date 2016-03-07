@@ -1,50 +1,50 @@
-<md-toolbar ng-cloak md-whiteframe="4" layout="row" layout-align-xs="space-between center" layout-align="center center">
-  <md-button class="menu" ng-click="$ctrl.toggleSidenav()" aria-label="Show menu">
-    <md-icon>menu</md-icon>
-  </md-button>
-  <h1>ngBigParty II.</h1>
+<md-sidenav md-whiteframe="3" md-component-id="left">
 
-  <md-fab-speed-dial
-    md-direction="down"
-    class="md-fling md-fab-top-right"
-  >
-    <md-fab-trigger>
-      <md-button aria-label="share this event" class="md-fab md-warn">
-        <md-icon>share</md-icon>
-      </md-button>
-    </md-fab-trigger>
-    <md-fab-actions>
-      <md-button href="http://twitter.com/share?text=ahoj honvo" aria-label="Twitter" class="md-fab md-raised md-mini">
-        <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
-      </md-button>
-      <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
-        <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
-      </md-button>
-      <md-button aria-label="G+" class="md-fab md-raised md-mini">
-        <md-icon md-svg-src="google_plus" aria-label="G+"></md-icon>
-      </md-button>
-    </md-fab-actions>
-  </md-fab-speed-dial>
-</md-toolbar>
+  <md-toolbar layout="row" layout-align="center center">
+    <img ng-src="{{ ::$ctrl.data.ngParty.logo.tiny }}" alt="ngParty logo">
+    <b>ngBigParty II.</b>
+  </md-toolbar>
+  <md-list>
+    <md-list-item
+      ng-repeat="(sectionKey,section) in ::$ctrl.data.sections"
+      ng-click="$ctrl.toggleSidenav(section.id)"
+    >
+      {{ ::section.title }}
+    </md-list-item>
+  </md-list>
 
-<div flex layout="row">
+</md-sidenav>
 
-  <md-sidenav md-whiteframe="3" md-component-id="left">
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
-    <md-toolbar layout="row" layout-align="center center">
-      <img ng-src="{{ ::$ctrl.data.ngParty.logo.tiny }}" alt="ngParty logo">
-      <b>ngBigParty II.</b>
-    </md-toolbar>
-    <md-list>
-      <md-list-item
-        ng-repeat="(sectionKey,section) in ::$ctrl.data.sections"
-        ng-click="$ctrl.toggleSidenav(section.id)"
-      >
-        {{ ::section.title }}
-      </md-list-item>
-    </md-list>
+  <md-toolbar md-whiteframe="4" layout="row" layout-align-xs="space-between center" layout-align="center center">
+    <md-button class="menu" ng-click="$ctrl.toggleSidenav()" aria-label="Show menu">
+      <md-icon>menu</md-icon>
+    </md-button>
+    <h1>ngBigParty II.</h1>
 
-  </md-sidenav>
+    <md-fab-speed-dial
+      md-direction="down"
+      class="md-fling md-fab-top-right"
+    >
+      <md-fab-trigger>
+        <md-button aria-label="share this event" class="md-fab md-warn">
+          <md-icon>share</md-icon>
+        </md-button>
+      </md-fab-trigger>
+      <md-fab-actions>
+        <md-button href="http://twitter.com/share?text=ahoj honvo" aria-label="Twitter" class="md-fab md-raised md-mini">
+          <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
+        </md-button>
+        <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+          <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
+        </md-button>
+        <md-button aria-label="G+" class="md-fab md-raised md-mini">
+          <md-icon md-svg-src="google_plus" aria-label="G+"></md-icon>
+        </md-button>
+      </md-fab-actions>
+    </md-fab-speed-dial>
+  </md-toolbar>
 
   <md-content layout="column">
 
@@ -219,7 +219,7 @@
 
     <footer class="section footer">
 
-      <ul class="social" layout="row" layout-align="center">
+      <ul class="social" layout="row" layout-xs="column" layout-align="center">
         <li>
           <md-button ng-href="{{ $ctrl.data.ngParty.links.social.github }}">github</md-button>
         </li>
