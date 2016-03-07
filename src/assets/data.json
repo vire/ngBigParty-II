@@ -20,6 +20,7 @@
     "subtitle": "Angular 2 is the new Angular",
     "date": "30th March, Prague",
     "quickAbout": "A first ever Angular conference in beautiful Prague, focused on getting local community up and ready for Angular 2",
+    "getTicketLink": "//www.meetup.com/ngParty/events/228604044",
     "getTicketBtn": "get tickets"
   },
   "sections": {
@@ -58,7 +59,8 @@
           "name": "Igor Minar",
           "job": "Angular team lead at Google",
           "bio": [
-            "Igor is a software engineer at Google. He is a lead on the Angular project, practitioner of test driven development, open source enthusiast, hacker. In his free time, Igor enjoys spending time with his wife and two kids, doing outdoor activities (including but not limited to sports, gardening and building retaining walls)."
+            "Igor is a software engineer at Google. He is a lead on the Angular project, practitioner of test driven development, open source enthusiast, hacker.",
+            "In his free time, Igor enjoys spending time with his wife and two kids, doing outdoor activities (including but not limited to sports, gardening and building retaining walls)."
           ],
           "picture": "assets/images/speakers/igor-minar.png",
           "talk": {
@@ -66,7 +68,7 @@
             "time": "6:00 - 6:30pm",
             "order": 3,
             "description": [
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at blanditiis dignissimos et, eveniet explicabo fugiat necessitatibus, nulla quos temporibus totam, unde vitae. Accusantium aliquam illo magni minima possimus rerum?"
+              "We will ask Igor everything about Angular, go to behind scenes of design decisions and much more. You don't wanna miss this one!"
             ]
           },
           "contact": {
@@ -78,7 +80,9 @@
           "name": "Martin Hochel",
           "job": "Software engineer at EmbedIT",
           "bio": [
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deleniti dignissimos dolore, enim et eum excepturi expedita inventore, minus molestiae neque nostrum odio officiis sint unde velit, voluptas voluptatem. Accusamus animi at est et exercitationem impedit ipsam officia quisquam sed? Aliquid aut dignissimos dolores ipsam officiis porro quidem repudiandae tempora?"
+            "Martin is a software engineer with strong passion for Typescript and clean code. Currently he is building great things at EmbedIT (Prague, Czech Republic).",
+            "He loves contributing to open source and is the creator of the ngMetadata library for Angular and also runs ngParty meetup group in Prague.",
+            "Martin loves to travel the world and meeting new people  at conferences. When he’s not busy preparing the next meetup or talk, you might find him outside on his skate/snow/wake boards (depends on weather conditions yo!)"
           ],
           "picture": "assets/images/speakers/martin-hochel.jpg",
           "talk": {
@@ -86,7 +90,7 @@
             "time": "5:10 - 5:40pm",
             "order": 1,
             "description": [
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at blanditiis dignissimos et, eveniet explicabo fugiat necessitatibus, nulla quos temporibus totam, unde vitae. Accusantium aliquam illo magni minima possimus rerum?"
+              "Angular 1 helped us to build amazing apps with easy. But today we have a new Angular. Angular 2 at your service. Martin will tell you all you need to know to get started with this new and shinny multi-platform framework"
             ]
           },
           "contact": {
@@ -118,15 +122,17 @@
           "name": "Viliam Elischer",
           "job": "Software engineer at ngParty",
           "bio": [
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deleniti dignissimos dolore, enim et eum excepturi expedita inventore, minus molestiae neque nostrum odio officiis sint unde velit, voluptas voluptatem. Accusamus animi at est et exercitationem impedit ipsam officia quisquam sed? Aliquid aut dignissimos dolores ipsam officiis porro quidem repudiandae tempora?"
+            "software developer, open-source contributor, meetup/conference speaker, community lover.",
+            "Core ngPartyCz member and contributor with passion for functional programming",
+            "What else do you need to know yo?"
           ],
           "picture": "assets/images/speakers/viliam-elischer.jpg",
           "talk": {
-            "title": "RxJs in Action",
+            "title": "RxJS 101: What you need to know to get started with RxJS tomorrow",
             "time": "7:10 - 7:40pm",
             "order": 6,
             "description": [
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at blanditiis dignissimos et, eveniet explicabo fugiat necessitatibus, nulla quos temporibus totam, unde vitae. Accusantium aliquam illo magni minima possimus rerum?"
+              "What is this thing called RxJs? What is a Stream or an Observable? Viliam will explain all those buzzwords and make you understand why they are so important, not only in Angular world..."
             ]
           },
           "contact": {
@@ -169,7 +175,7 @@
             "time": "5:40 - 6:10pm",
             "order": 2,
             "description": [
-              "lorem ipsum asid asd asdas das "
+              "Everything you need to know about Typescript. We will show you how powerful optional types are and how you can benefit from them without hassle."
             ]
           },
           "contact": {
