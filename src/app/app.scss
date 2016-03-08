@@ -1,3 +1,4 @@
+@import "../../node_modules/angular-material/angular-material";
 /* Toolbar area */
 
 /*.menu {
@@ -129,7 +130,10 @@ app{
   display: flex;
   flex-flow: row;
   height: 100%;
+}
 
+md-content{
+  box-sizing: border-box;
 }
 
 md-toolbar h1 {
@@ -154,28 +158,27 @@ md-sidenav  md-list {
 .hero h2{
   font-size: 1.5rem;
   font-weight: 400;
-}
-@media only screen and (min-width: 960px){
-  .hero h2{
+
+  @media only screen and (min-width: 960px){
     font-size: 3.5rem;
   }
-}
-@media only screen and (min-width: 1280px){
-  .hero h2{
+
+  @media only screen and (min-width: 1280px){
     font-size: 4rem;
     font-weight: 200;
   }
+
 }
 .hero__bg-container{
   width: 100%;
   display: inline-block;
   background-size: cover;
   background: linear-gradient(to top, rgba(46, 49, 65, 0.3), rgba(46, 49, 65, 0.8)), url("../assets/images/bg.jpg") no-repeat center;
-}
-@media only screen and (min-width: 960px){
-  .hero__bg-container{
-    background: linear-gradient(to top, rgba(46, 49, 65, 0.5), rgba(46, 49, 65, 0.8)), url("../assets/images/bg_large.jpg") no-repeat center;
+
+  @media only screen and (min-width: 960px){
+      background: linear-gradient(to top, rgba(46, 49, 65, 0.5), rgba(46, 49, 65, 0.8)), url("../assets/images/bg_large.jpg") no-repeat center;
   }
+
 }
 
 .hero__bg-container-overlay {
@@ -184,12 +187,12 @@ md-sidenav  md-list {
   height: 100%;
   padding: 12% 5% 8% 5%;
   width: 100%;
-}
-@media only screen and (min-width: 960px){
-  .hero__bg-container-overlay {
-    background: none;
-    padding: 8% 5% 12%;
+
+  @media only screen and (min-width: 960px){
+      background: none;
+      padding: 8% 5% 12%;
   }
+
 }
 
 .hero-btn{
@@ -198,6 +201,14 @@ md-sidenav  md-list {
 }
 
 /*TALK*/
+
+md-list-item{
+  &.talk{
+    @media only screen and (max-width: ($layout-breakpoint-xs - 1)) {
+      margin: 1.5em 0 !important;
+    }
+  }
+}
 .talk{
 
 }
@@ -205,22 +216,40 @@ md-sidenav  md-list {
   padding-bottom: .5rem;
   margin-bottom: .5rem;
   border-bottom: 1px solid gray;
+
+  h4 > time{
+
+    @media only screen and (max-width: ($layout-breakpoint-xs - 1)) {
+      padding: .5em 0;
+    }
+
+  }
 }
 .talk__title{
   font-size: 2rem !important;
   white-space: inherit !important;
 }
-.talk__content{}
-
-.section{
-  background-color: white;
-  padding: 22px;
-}
-@media only screen and (min-width: 48rem){
-  .section{
-    padding: 44px;
+.talk__content{
+  display: flex;
+  align-items: flex-start;
+  > md-icon{
+    margin: 0;
+    margin-right: .5em;
   }
 }
+
+.section{
+
+  box-sizing: border-box;
+  background-color: white;
+  padding: .5em;
+
+  @media only screen and (min-width: 48rem){
+      padding: 44px;
+  }
+
+}
+
 .section--safety{
   overflow: hidden;
 }
@@ -258,12 +287,12 @@ md-sidenav  md-list {
 }
 
 .map-overlay{
-  background:transparent;
-  position:relative;
-  width:100%;
-  height:400px; /* your iframe height */
-  top:400px;  /* your iframe height */
-  margin-top:-400px;  /* your iframe height */
+  background: transparent;
+  position: relative;
+  width: 100%;
+  height: 400px; /* your iframe height */
+  top: 400px;  /* your iframe height */
+  margin-top: -400px;  /* your iframe height */
 }
 .img-responsive{
   display: block;

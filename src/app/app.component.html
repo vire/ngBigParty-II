@@ -22,28 +22,6 @@
       <md-icon>menu</md-icon>
     </md-button>
     <h1>ngBigParty II.</h1>
-
-    <md-fab-speed-dial
-      md-direction="down"
-      class="md-fling md-fab-top-right"
-    >
-      <md-fab-trigger>
-        <md-button aria-label="share this event" class="md-fab md-warn">
-          <md-icon>share</md-icon>
-        </md-button>
-      </md-fab-trigger>
-      <md-fab-actions>
-        <md-button href="http://twitter.com/share?text=ahoj honvo" aria-label="Twitter" class="md-fab md-raised md-mini">
-          <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
-        </md-button>
-        <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
-          <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
-        </md-button>
-        <md-button aria-label="G+" class="md-fab md-raised md-mini">
-          <md-icon md-svg-src="google_plus" aria-label="G+"></md-icon>
-        </md-button>
-      </md-fab-actions>
-    </md-fab-speed-dial>
   </md-toolbar>
 
   <md-content>
@@ -130,8 +108,8 @@
       class="section"
     >
       <h3 class="md-display-1">{{ ::$ctrl.data.sections.program.title }}</h3>
-      <div>
-        <md-list layout="row" layout-wrap="" layout-align="center top">
+
+      <md-list layout="column" layout-gt-md="row" layout-wrap>
 
           <md-list-item
             flex-gt-md="45"
@@ -147,7 +125,7 @@
 
               <div class="talk__header">
                 <h3 class="talk__title">{{ ::speaker.talk.title }}</h3>
-                <h4 layout="row" layout-align="space-between">
+                <h4 layout="column" layout-gt-xs="row" layout-align-gt-xs="space-between">
                   {{ ::speaker.name }}
                   <time>
                     <md-icon>schedule</md-icon>
@@ -156,7 +134,7 @@
                 </h4>
               </div>
               <div class="talk__content">
-                <md-icon>info_outline</md-icon>
+                <md-icon hide-xs>info_outline</md-icon>
                 <p ng-repeat="description in ::speaker.talk.description">
                   {{ ::description }}
                 </p>
@@ -164,7 +142,7 @@
             </div>
           </md-list-item>
         </md-list>
-      </div>
+
     </section>
 
     <section
@@ -245,6 +223,29 @@
 
     </footer>
   </md-content>
+
+  <md-fab-speed-dial
+    md-direction="{{ $ctrl.$mdMedia('xs') ? 'up' : 'down'}}"
+    ng-class="{'md-fab-bottom-right':$ctrl.$mdMedia('xs'),'md-fab-top-right':$ctrl.$mdMedia('gt-xs')}"
+    class="md-fling "
+  >
+    <md-fab-trigger>
+      <md-button aria-label="share this event" class="md-fab md-warn">
+        <md-icon>share</md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+      <md-button href="http://twitter.com/share?text=ahoj honvo" aria-label="Twitter" class="md-fab md-raised md-mini">
+        <md-icon md-svg-src="twitter" aria-label="Twitter"></md-icon>
+      </md-button>
+      <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+        <md-icon md-svg-src="facebook" aria-label="Facebook"></md-icon>
+      </md-button>
+      <md-button aria-label="G+" class="md-fab md-raised md-mini">
+        <md-icon md-svg-src="google_plus" aria-label="G+"></md-icon>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
 
 
 </div>

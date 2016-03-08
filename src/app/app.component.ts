@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   constructor(
     @Inject( '$mdSidenav' ) private $mdSidenav: ng.material.ISidenavService,
     @Inject( '$mdBottomSheet' ) private $mdBottomSheet: ng.material.IBottomSheetService,
+    @Inject( '$mdMedia' ) private $mdMedia: ng.material.IMedia,
     @Inject( '$log' ) private $log: ng.ILogService,
     @Inject( '$scope' ) private $scope: ng.IScope,
     @Inject( '$location' ) private $location: ng.ILocationService,
